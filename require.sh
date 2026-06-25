@@ -64,7 +64,7 @@ end
 EOF
 echo -e "\n=========Nmap Result========="
 nmap_result=$(mktemp)
-nmap --script="first_nmap_script" 127.0.0.1 > $nmap_result
+nmap -p 80 --script="first_nmap_script" goole.com > $nmap_result
 
 sed "s/Your first script is running successfuly/\x1b[30;42m&\x1b[0m/g" $nmap_result
 fi
